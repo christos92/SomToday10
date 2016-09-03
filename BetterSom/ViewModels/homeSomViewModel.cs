@@ -93,7 +93,7 @@ namespace BetterSom.ViewModels
         #region Shared Logic
 
         /// <summary>
-        /// Updates data related to current Pokemon
+        /// Updates data related to current user
         /// </summary>
         private async void UpdateCurrentData()
         {
