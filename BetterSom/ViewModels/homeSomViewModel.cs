@@ -21,9 +21,9 @@ namespace BetterSom.ViewModels
                 Naam = "Piet Smit";
             }
             UpdateCurrentData();
-           var localData = ApplicationData.Current.LocalSettings;
-           schoolname = localData.Values["sc"].ToString();
-           baseurl =  "https://somtoday.nl/" + schoolname + "/services/mobile/v10/";
+            var localData = ApplicationData.Current.LocalSettings;
+            schoolname = localData.Values["sc"].ToString();
+            baseurl =  "https://somtoday.nl/" + schoolname + "/services/mobile/v10/";
 
             gebNaam = localData.Values["lNaam"].ToString();
             password = localData.Values["pass"].ToString();

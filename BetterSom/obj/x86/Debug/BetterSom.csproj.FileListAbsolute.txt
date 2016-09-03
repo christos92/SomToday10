@@ -226,3 +226,9 @@ C:\Users\Christos\documents\visual studio 2015\Projects\BetterSom\BetterSom\obj\
 C:\Users\Christos\documents\visual studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\BetterSom.csproj.GenerateResource.Cache
 C:\Users\Christos\documents\visual studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\resources.en.resfiles
 C:\Users\Christos\documents\visual studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\resources.en.resfiles.intermediate
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Microsoft.Xaml.Interactions.dll
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Microsoft.Xaml.Interactivity.dll
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Template10Library.dll
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Template10Library.pri.xml

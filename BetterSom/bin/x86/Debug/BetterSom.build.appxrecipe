@@ -67,6 +67,12 @@
     <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Microsoft.VisualBasic\10.0.1\lib\netcore50\Microsoft.VisualBasic.dll">
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
@@ -370,6 +376,9 @@
     <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library.dll">
+      <PackagePath>Template10Library.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Desktop\YourSom\bin\x86\Debug\PCLCrypto.dll">
       <PackagePath>PCLCrypto.dll</PackagePath>
     </AppxPackagedFile>
@@ -435,6 +444,30 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Template10Library.xr.xml">
+      <PackagePath>Template10Library\Template10Library.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Controls\HamburgerMenu.xaml">
+      <PackagePath>Template10Library\Controls\HamburgerMenu.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Properties\Template10Library.rd.xml">
+      <PackagePath>Template10Library\Properties\Template10Library.rd.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Themes\Generic.xaml">
+      <PackagePath>Template10Library\Themes\Generic.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Themes\HamburgerMenu.xaml">
+      <PackagePath>Template10Library\Themes\HamburgerMenu.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Themes\ModalDialog.xaml">
+      <PackagePath>Template10Library\Themes\ModalDialog.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Themes\PageHeader.xaml">
+      <PackagePath>Template10Library\Themes\PageHeader.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Template10\1.1.11\lib\uap10.0\Template10Library\Themes\Resizer.xaml">
+      <PackagePath>Template10Library\Themes\Resizer.xaml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

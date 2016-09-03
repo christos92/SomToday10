@@ -5,6 +5,7 @@ using PCLCrypto;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -147,6 +148,9 @@ namespace BetterSom
                         {
                             localData.Values["autoLogin"] = "false";
                         }
+                        BetterSom.Utils.CookieHelper cl = new BetterSom.Utils.CookieHelper();
+                       var test = await cl.getLogCookies(user.Text, ww.Password);
+                        Debug.Write(test);
                     }
                     this.Frame.Navigate(typeof(homeSom));
                 }
