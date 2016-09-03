@@ -1,4 +1,5 @@
 ﻿using BetterSom.Models;
+using BetterSom.Views;
 using Newtonsoft.Json;
 using PCLCrypto;
 using System;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -30,8 +32,6 @@ namespace BetterSom
     public sealed partial class MainPage : Page
     {
         private HttpClient httpClient;
-
-       
         public MainPage()
         {
             this.InitializeComponent();
@@ -40,7 +40,7 @@ namespace BetterSom
             httpClient.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
             Loaded += MainPage_Loaded;
         }
-        private ObservableCollection<schoo> sc = new ObservableCollection<schoo>();
+        private ObservableCollection<SchoolModel> schoolList = new ObservableCollection<SchoolModel>();
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             cob.IsEnabled = false;
@@ -59,14 +59,12 @@ namespace BetterSom
                 foreach (var scho1 in school)
                 {
                     foreach (var scho in scho1.instellingen)
-                    {
-
-
-                        var schooo = new schoo();
-                        schooo.afkorting = scho.afkorting;
-                        schooo.brin = scho.brin;
-                        schooo.naam = scho.naam;
-                        sc.Add(schooo);
+                    { 
+                        var schoolModel = new SchoolModel();
+                        schoolModel.afkorting = scho.afkorting;
+                        schoolModel.brin = scho.brin;
+                        schoolModel.naam = scho.naam;
+                        schoolList.Add(schoolModel);
 
                     }
 
@@ -77,13 +75,8 @@ namespace BetterSom
             {
 
             }
-            cob.DataContext = sc;
+            cob.DataContext = schoolList;
             cob.IsEnabled = true;
-        }
-
-        private void cob_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         string username;
@@ -112,11 +105,11 @@ namespace BetterSom
         }
         private async void Button_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            login();
+           await login();
         }
-        async void login()
+        private async Task login()
         {
-            var cobSec = cob.SelectedItem as schoo;
+            var cobSec = cob.SelectedItem as SchoolModel;
             brin = cobSec.brin;
             schoolName = cobSec.afkorting;
 
@@ -205,7 +198,7 @@ namespace BetterSom
 
         }
     }
-    public class schoo
+    public class SchoolModel
     {
         public string naam { get; set; }
         public string afkorting { get; set; }
