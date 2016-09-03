@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -73,7 +74,8 @@ namespace BetterSom
             }
             catch (Exception e1)
             {
-
+                MessageDialog failedMessage = new MessageDialog("U bent waarschijnlijk niet verbonden met het internet of SOMToday ligt eruit.");
+                await failedMessage.ShowAsync();
             }
             cob.DataContext = schoolList;
             cob.IsEnabled = true;
@@ -109,88 +111,93 @@ namespace BetterSom
         }
         private async Task login()
         {
-            var cobSec = cob.SelectedItem as SchoolModel;
-            brin = cobSec.brin;
-            schoolName = cobSec.afkorting;
-
-            var sha1 = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha1);
-            byte[] passwordArray = Encoding.UTF8.GetBytes(ww.Password);
-            byte[] hash = sha1.HashData(passwordArray);
-            string hashedAndBase64 = Convert.ToBase64String(hash);
-            string output = ToHex(hashedAndBase64);
-            password = output;
-            username = Base64Encode(user.Text);
-
-            HttpResponseMessage response = await httpClient.GetAsync("http://somtoday.nl/" + schoolName + "/services/mobile/v10/Login/CheckMultiLoginB64/" +
-            username + "/" + password + "/" + brin);
-            string array = await response.Content.ReadAsStringAsync();
-            var school = JsonConvert.DeserializeObject<loggedIn>(array);
-
-            if ((string)school.error == "SUCCESS")
+            try
             {
-                var localData = ApplicationData.Current.LocalSettings;
-                foreach (var na in school.leerlingen)
+                var cobSec = cob.SelectedItem as SchoolModel;
+                brin = cobSec.brin;
+                schoolName = cobSec.afkorting;
+                var sha1 = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha1);
+                byte[] passwordArray = Encoding.UTF8.GetBytes(ww.Password);
+                byte[] hash = sha1.HashData(passwordArray);
+                string hashedAndBase64 = Convert.ToBase64String(hash);
+                string output = ToHex(hashedAndBase64);
+                password = output;
+                username = Base64Encode(user.Text);
+                HttpResponseMessage response = await httpClient.GetAsync("http://somtoday.nl/" + schoolName + "/services/mobile/v10/Login/CheckMultiLoginB64/" +
+                username + "/" + password + "/" + brin);
+                string array = await response.Content.ReadAsStringAsync();
+                var school = JsonConvert.DeserializeObject<loggedIn>(array);
+                if ((string)school.error == "SUCCESS")
                 {
-
-
-                    localData.Values["naam"] = na.fullName;
-                    localData.Values["lNaam"] = username;
-                    localData.Values["iD"] = na.leerlingId;
-                    localData.Values["pass"] = password;
-                    localData.Values["brin"] = brin;
-                    localData.Values["sc"] = schoolName;
-                    if (remember.IsChecked == true)
+                    var localData = ApplicationData.Current.LocalSettings;
+                    foreach (var na in school.leerlingen)
                     {
+                        localData.Values["naam"] = na.fullName;
+                        localData.Values["lNaam"] = username;
+                        localData.Values["iD"] = na.leerlingId;
+                        localData.Values["pass"] = password;
+                        localData.Values["brin"] = brin;
+                        localData.Values["sc"] = schoolName;
+                        if (remember.IsChecked == true)
+                        {
 
-                        localData.Values["autoLogin"] = "true";
-                    }
-                    else
-                    {
-                        localData.Values["autoLogin"] = "false";
-
+                            localData.Values["autoLogin"] = "true";
+                        }
+                        else
+                        {
+                            localData.Values["autoLogin"] = "false";
+                        }
                     }
                     this.Frame.Navigate(typeof(homeSom));
                 }
+                else
+                {
+                    MessageDialog failedMessage = new MessageDialog("Helaas kon de app niet inloggen, controleer uw wachtwoord en/of gebruikersnaam.", "Helaas");
+                    await failedMessage.ShowAsync();
+                }
             }
-            else
+            catch (Exception e1)
             {
-
+                MessageDialog failedMessage = new MessageDialog("U bent waarschijnlijk niet verbonden met het internet of SOMToday ligt eruit.");
+                await failedMessage.ShowAsync();
             }
-
         }
         async void loginAuto()
         {
+            try
+            {  
             var localData = ApplicationData.Current.LocalSettings;
-
             username = localData.Values["lNaam"].ToString();
-
             password = localData.Values["pass"].ToString();
             brin = localData.Values["brin"].ToString();
             schoolName = localData.Values["sc"].ToString();
-
-
             HttpResponseMessage response = await httpClient.GetAsync("http://somtoday.nl/" + schoolName + "/services/mobile/v10/Login/CheckMultiLoginB64/" +
             username + "/" + password + "/" + brin);
             string array = await response.Content.ReadAsStringAsync();
             var school = JsonConvert.DeserializeObject<loggedIn>(array);
 
-            if ((string)school.error == "SUCCESS")
-            {
-
-                foreach (var na in school.leerlingen)
+                if ((string)school.error == "SUCCESS")
                 {
 
-                    localData.Values["naam"] = na.fullName;
-                    localData.Values["iD"] = na.leerlingId;
+                    foreach (var na in school.leerlingen)
+                    {
 
-                    this.Frame.Navigate(typeof(homeSom));
+                        localData.Values["naam"] = na.fullName;
+                        localData.Values["iD"] = na.leerlingId;
+
+                        this.Frame.Navigate(typeof(homeSom));
+                    }
+                }
+                else
+                {
+
                 }
             }
-            else
+            catch (Exception e1)
             {
-
+                MessageDialog failedMessage = new MessageDialog("U bent waarschijnlijk niet verbonden met het internet of SOMToday ligt eruit.");
+                await failedMessage.ShowAsync();
             }
-
         }
 
         private void HyperlinkButton_Tapped(object sender, TappedRoutedEventArgs e)

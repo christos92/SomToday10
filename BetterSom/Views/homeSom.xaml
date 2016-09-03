@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="BetterSom.Views.homeSom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BetterSom.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="557*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="293*"/>
+                <ColumnDefinition Width="67*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="{ThemeResource SystemControlBackgroundAccentBrush}" Orientation="Horizontal" >
+                <Ellipse  Width="75" Height="79" VerticalAlignment="Center">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="ms-appx:///Assets/pasfoto_leerling.jpg" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Foreground="{ThemeResource SystemControlForegroundAltHighBrush}" Margin="10,0" Grid.Row="1" VerticalAlignment="Center" >
+            <Run x:Name="tijd" FontSize="23" Text="Goedenmiddag, "/>
+                <LineBreak/>
+            <Run x:Name="Naam" FontSize="17" Text="Christos Karapasias" Foreground="#FFCDCACA"/>
+                </TextBlock>
+            </StackPanel>
+            <Grid  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Grid.Column="1">
+                <AppBarButton Icon="Setting" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{ThemeResource SystemControlForegroundAltHighBrush}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

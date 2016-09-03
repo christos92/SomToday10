@@ -40,7 +40,7 @@
          <StackPanel Background="#FEDD38" VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Height="250">
 
 
-                <ComboBox  HorizontalAlignment="Stretch" Margin="25,15"  FontSize="20" x:Name="cob" SelectionChanged="cob_SelectionChanged" ItemsSource="{Binding}" BorderBrush="{x:Null}" PlaceholderText="School naam" >
+                <ComboBox  HorizontalAlignment="Stretch" Margin="25,15"  FontSize="20" x:Name="cob" ItemsSource="{Binding}" BorderBrush="{x:Null}" PlaceholderText="School naam" >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding naam}"/>

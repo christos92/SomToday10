@@ -98,9 +98,13 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cijfer.cs" />
+    <Compile Include="Models\Huiswerk.cs" />
+    <Compile Include="Models\LeerlingProfiel.cs" />
     <Compile Include="Models\loggedIn.cs" />
     <Compile Include="Models\scholen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\homeSomViewModel.cs" />
     <Compile Include="Views\homeSom.xaml.cs">
       <DependentUpon>homeSom.xaml</DependentUpon>
     </Compile>
@@ -114,6 +118,7 @@
   <ItemGroup>
     <Content Include="Assets\Backgrounds\somtoday.jpg" />
     <Content Include="Assets\Logos\unnamed.png" />
+    <Content Include="Assets\pasfoto_leerling.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -144,7 +149,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.Advertising.Xaml, Version=10.0">
+      <Name>Microsoft Advertising SDK for XAML</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
