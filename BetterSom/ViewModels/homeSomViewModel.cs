@@ -18,8 +18,9 @@ namespace BetterSom.ViewModels
         {
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
-
+                Naam = "Piet Smit";
             }
+            UpdateCurrentData();
            var localData = ApplicationData.Current.LocalSettings;
            schoolname = localData.Values["sc"].ToString();
            baseurl =  "https://somtoday.nl/" + schoolname + "/services/mobile/v10/";
@@ -27,11 +28,10 @@ namespace BetterSom.ViewModels
             gebNaam = localData.Values["lNaam"].ToString();
             password = localData.Values["pass"].ToString();
             brin = localData.Values["brin"].ToString();
+            Naam = localData.Values["naam"].ToString();
         }
-        string gebNaam;
-        string password;
-        string brin;
-
+      
+      
         #region Lifecycle Handlers
 
         /// <summary>
@@ -45,11 +45,10 @@ namespace BetterSom.ViewModels
         {
             if (suspensionState.Any())
             {
-              
+            
             }
             else
-            {
-            
+            {     
                 UpdateCurrentData();
             }
             await Task.CompletedTask;
@@ -74,6 +73,10 @@ namespace BetterSom.ViewModels
 
         #endregion
         #region Bindable Game Vars
+        public string gebNaam { get; set; }
+        public string password { get; set; }
+        public string brin { get; set; }
+        public string Naam { get; set; }
 
         private Profiel leerlingProfiel { get; set; }
         /// <summary>
@@ -98,8 +101,7 @@ namespace BetterSom.ViewModels
         private async void UpdateCurrentData()
         {
             // Retrieve data
-            LeerlingProf = await KrijgProfiel();
-          
+            LeerlingProf = await KrijgProfiel();  
         }
         string schoolname = "";
         string baseurl;
@@ -113,7 +115,7 @@ namespace BetterSom.ViewModels
             string gradesurl;
             gradesurl = baseurl + "Cijfers/GetMultiCijfersRecentB64/" + gebNaam + "/" + password + "/" +
                     brin + "/" + profiel.Id;
-
+            Naam = profiel.Naam;
             return profiel;
         }
 
