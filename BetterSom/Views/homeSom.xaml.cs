@@ -8,9 +8,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Popups;
@@ -22,6 +24,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -39,28 +42,6 @@ namespace BetterSom.Views
         }
         string username;
         string password;
-        public async Task LoadImage(Uri uri)
-        {
-            BitmapImage bitmapImage = new BitmapImage();
-
-           
-               var httpClient = new HttpClient();
-                    httpClient.DefaultRequestHeaders.Add("JSESSIONID", JIDD);
-                    var data = await httpClient.GetByteArrayAsync(uri);
-                  
-                    var file = await KnownFolders.PicturesLibrary.CreateFileAsync("myfile.jpg", CreationCollisionOption.ReplaceExisting);
-            var stream = await file.OpenAsync(FileAccessMode.ReadWrite);
-
-            using (var outputStream = stream.GetOutputStreamAt(0))
-            {
-                DataWriter writer = new DataWriter(outputStream);
-                writer.WriteBytes(data);
-                await writer.StoreAsync();
-               await outputStream.FlushAsync();
-            }
-
-
-        }
         string afkorting;
         public string JIDD = "";
         private void HomeSom_Loaded(object sender, RoutedEventArgs e)
@@ -86,23 +67,58 @@ namespace BetterSom.Views
                 return "";
             }
         }
-        int count = 0;
+      
         private async void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
         {
             try
-            {      
-                if (count == 0)
+            {
+                if (webView.Source.ToString().Contains("pasfoto"))
                 {
-                    await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByName('usernameFieldPanel:usernameFieldPanel_body:usernameField')[0].value='" + username+"';" });
-                    await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByName('passwordFieldPanel:passwordFieldPanel_body:passwordField')[0].value='"+password+"';" });
-                    await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByTagName('a')[0].click();" });
-                    count++;
+
+  
+
+                    RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
+                    await renderTargetBitmap.RenderAsync(webView);
+                    var file = await KnownFolders.PicturesLibrary.CreateFileAsync("profilepicture.png", CreationCollisionOption.ReplaceExisting);
+                    if (file != null)
+                    {
+                        var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+
+                        using (var stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                        {
+                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, stream);
+                            encoder.SetPixelData(
+                                BitmapPixelFormat.Bgra8,
+                                BitmapAlphaMode.Ignore,
+                                (uint)renderTargetBitmap.PixelWidth,
+                                (uint)renderTargetBitmap.PixelHeight, 96d, 96d,
+                                pixelBuffer.ToArray());
+                         
+                            await encoder.FlushAsync();
+                         
+                       }
+                        var filestream = await file.OpenAsync(FileAccessMode.Read);
+                        BitmapImage imageBit = new BitmapImage();
+                      
+                        ImageBrush brush = new ImageBrush();
+                        brush.Stretch = Stretch.UniformToFill;
+                        await imageBit.SetSourceAsync(filestream);
+                        brush.ImageSource = imageBit;
+                        Els.Fill = brush;
+                    }
                 }
+                else
+                {
+                    await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByName('usernameFieldPanel:usernameFieldPanel_body:usernameField')[0].value='" + username + "';" });
+                    await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByName('passwordFieldPanel:passwordFieldPanel_body:passwordField')[0].value='" + password + "';" });
+                    await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByTagName('a')[0].click();" });
+                    webView.Navigate(new Uri("https://merewa-elo.somtoday.nl/pasfoto/pasfoto_leerling.jpg?id=546308480"));
+                }
+
             }
             catch (Exception e1)
             {
-                MessageDialog mes = new MessageDialog(e1.Message);
-                await mes.ShowAsync();
+                Debug.WriteLine(e1.Message);
             }
         }
     }

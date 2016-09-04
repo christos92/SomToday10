@@ -20,23 +20,27 @@
             </Grid.ColumnDefinitions>
         
             <StackPanel Background="{ThemeResource SystemControlBackgroundAccentBrush}" Orientation="Horizontal" >
-                <Ellipse x:ConnectionId='2' x:Name="Els"  Width="75" Height="79" VerticalAlignment="Center">
+                <Ellipse x:ConnectionId='3' x:Name="Els"  Width="75" Height="79" VerticalAlignment="Center">
                     <Ellipse.Fill>
-                        <ImageBrush x:ConnectionId='5' x:Name="imageBrush"  Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Square150x150Logo.png"/>
+                        <ImageBrush x:ConnectionId='6' x:Name="imageBrush"  Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Square150x150Logo.png"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Foreground="{ThemeResource SystemControlForegroundAltHighBrush}" Margin="10,0" Grid.Row="1" VerticalAlignment="Center" >
-            <Run x:ConnectionId='3' x:Name="tijd" FontSize="23" Text="Goedenmiddag, "/>
+            <Run x:ConnectionId='4' x:Name="tijd" FontSize="23" Text="Goedenmiddag, "/>
                 <LineBreak/>
-            <Run x:ConnectionId='4' x:Name="Naam" FontSize="17" Text="Christos Karapasias" Foreground="#FFCDCACA"/>
+            <Run x:ConnectionId='5' x:Name="Naam" FontSize="17" Text="Christos Karapasias" Foreground="#FFCDCACA"/>
                 </TextBlock>
             </StackPanel>
             <Grid  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Grid.Column="1">
                 <AppBarButton Icon="Setting" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{ThemeResource SystemControlForegroundAltHighBrush}"/>
             </Grid> 
           
-        </Grid> 
-        <WebView x:ConnectionId='1' Grid.Row="1" x:Name="webView" />
-    </Grid>
+        </Grid>
+     
+        <Image x:ConnectionId='1' x:Name="RenderedImage" Grid.Row="1"/>
+        <WebView x:ConnectionId='2'  x:Name="webView" Height="160" Width="110" Margin="3012,-460,-3012,264" />
+      
+    </Grid>  
+ 
 </Page>
 
