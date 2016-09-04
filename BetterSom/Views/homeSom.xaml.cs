@@ -37,7 +37,7 @@ namespace BetterSom.Views
     {
         public homeSom()
         {
-            this.InitializeComponent();
+            this.InitializeComponent(); 
             Loaded += HomeSom_Loaded;
         }
         string username;
@@ -45,6 +45,11 @@ namespace BetterSom.Views
         string afkorting;
         string id;
         public string JIDD = "";
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+       }
         private void HomeSom_Loaded(object sender, RoutedEventArgs e)
         {
             var localData = ApplicationData.Current.LocalSettings;
@@ -70,6 +75,9 @@ namespace BetterSom.Views
             }
         }
       
+
+
+
         private async void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
         {
             try

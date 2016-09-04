@@ -156,17 +156,23 @@ namespace BetterSom.BetterSom_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "BetterSom.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "BetterSom.Views.homeSom";
+            _typeNameTable[3] = "BetterSom.ViewModels.homeSomViewModel";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "BetterSom.Models.Profiel";
+            _typeNameTable[6] = "BetterSom.Views.homeSom";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::BetterSom.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::BetterSom.Views.homeSom);
+            _typeTable[3] = typeof(global::BetterSom.ViewModels.homeSomViewModel);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::BetterSom.Models.Profiel);
+            _typeTable[6] = typeof(global::BetterSom.Views.homeSom);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -202,7 +208,9 @@ namespace BetterSom.BetterSom_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::BetterSom.MainPage(); }
-        private object Activate_3_homeSom() { return new global::BetterSom.Views.homeSom(); }
+        private object Activate_3_homeSomViewModel() { return new global::BetterSom.ViewModels.homeSomViewModel(); }
+        private object Activate_5_Profiel() { return new global::BetterSom.Models.Profiel(); }
+        private object Activate_6_homeSom() { return new global::BetterSom.Views.homeSom(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -229,9 +237,28 @@ namespace BetterSom.BetterSom_XamlTypeInfo
                 xamlType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  BetterSom.Views.homeSom
+            case 3:   //  BetterSom.ViewModels.homeSomViewModel
+                userType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_3_homeSomViewModel;
+                userType.AddMemberName("LeerlingProf");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Object
+                xamlType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  BetterSom.Models.Profiel
+                userType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  BetterSom.Views.homeSom
                 userType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_homeSom;
+                userType.Activator = Activate_6_homeSom;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -296,11 +323,31 @@ namespace BetterSom.BetterSom_XamlTypeInfo
             return foundXamlType;
         }
 
+        private object get_0_homeSomViewModel_LeerlingProf(object instance)
+        {
+            var that = (global::BetterSom.ViewModels.homeSomViewModel)instance;
+            return that.LeerlingProf;
+        }
+        private void set_0_homeSomViewModel_LeerlingProf(object instance, object Value)
+        {
+            var that = (global::BetterSom.ViewModels.homeSomViewModel)instance;
+            that.LeerlingProf = (global::BetterSom.Models.Profiel)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::BetterSom.BetterSom_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "BetterSom.ViewModels.homeSomViewModel.LeerlingProf":
+                userType = (global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType)GetXamlTypeByName("BetterSom.ViewModels.homeSomViewModel");
+                xamlMember = new global::BetterSom.BetterSom_XamlTypeInfo.XamlMember(this, "LeerlingProf", "BetterSom.Models.Profiel");
+                xamlMember.Getter = get_0_homeSomViewModel_LeerlingProf;
+                xamlMember.Setter = set_0_homeSomViewModel_LeerlingProf;
+                break;
+            }
             return xamlMember;
         }
     }

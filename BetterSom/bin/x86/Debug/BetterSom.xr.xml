@@ -2,6 +2,9 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="naam" />
+    <RootPropertyPathName Name="LeerlingProf" />
+    <RootPropertyPathName Name="Naam" />
+    <RootPropertyPathName Name="Tijd" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -9,6 +12,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
+      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -114,6 +118,7 @@
       <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="BetterSom.MainPage" />
+    <RootType FullName="BetterSom.ViewModels.homeSomViewModel" />
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.WebView">
       <RootProperty Name="Height" />

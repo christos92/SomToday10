@@ -3,11 +3,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BetterSom.Views"
+    xmlns:viewModels="using:BetterSom.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <viewModels:homeSomViewModel/>
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,16 +22,16 @@
                 <ColumnDefinition Width="67*"/>
             </Grid.ColumnDefinitions>
         
-            <StackPanel Background="{ThemeResource SystemControlBackgroundAccentBrush}" Orientation="Horizontal" >
+            <StackPanel  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Orientation="Horizontal" >
                 <Ellipse x:ConnectionId='3' x:Name="Els"  Width="75" Height="79" VerticalAlignment="Center">
                     <Ellipse.Fill>
                         <ImageBrush x:ConnectionId='6' x:Name="imageBrush"  Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Square150x150Logo.png"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Foreground="{ThemeResource SystemControlForegroundAltHighBrush}" Margin="10,0" Grid.Row="1" VerticalAlignment="Center" >
-            <Run x:ConnectionId='4' x:Name="tijd" FontSize="23" Text="Goedenmiddag, "/>
+            <Run x:ConnectionId='4' x:Name="tijd" FontSize="23" Text="{Binding LeerlingProf.Tijd}" />
                 <LineBreak/>
-            <Run x:ConnectionId='5' x:Name="Naam" FontSize="17" Text="Christos Karapasias" Foreground="#FFCDCACA"/>
+            <Run x:ConnectionId='5' x:Name="Naam" FontSize="17" Text="{Binding LeerlingProf.Naam}" Foreground="#FFCDCACA"/>
                 </TextBlock>
             </StackPanel>
             <Grid  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Grid.Column="1">

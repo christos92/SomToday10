@@ -100,11 +100,12 @@
     </Compile>
     <Compile Include="Models\Cijfer.cs" />
     <Compile Include="Models\Huiswerk.cs" />
-    <Compile Include="Models\LeerlingProfiel.cs" />
     <Compile Include="Models\loggedIn.cs" />
     <Compile Include="Models\scholen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\homeSomViewModel.cs" />
+    <Compile Include="Models\LeerlingProfiel.cs" />
+    <Compile Include="ViewModels\ViewModelHelper.cs" />
     <Compile Include="Views\homeSom.xaml.cs">
       <DependentUpon>homeSom.xaml</DependentUpon>
     </Compile>
