@@ -10,6 +10,7 @@ namespace BetterSom.Models
     public class ModelItem
     {
         public string Title { get; set; }
+        public Type frame { get; set; }
         public Symbol symb { get; set; }
     }
 

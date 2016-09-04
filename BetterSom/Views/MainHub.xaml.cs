@@ -38,30 +38,34 @@ namespace BetterSom.Views
             try
             {
                 var home = new ModelItem();
-                home.Title = "Home";
-                home.symb = Symbol.Home;
-
+                home.Title = "Rooster";
+                home.symb = Symbol.CalendarWeek;
+                home.frame = typeof(MainPage);
                 items.Add(home);
 
                 var huiswerk = new ModelItem();
                 huiswerk.Title = "Huiswerk";
                 huiswerk.symb = Symbol.Rename;
+                huiswerk.frame = typeof(MainPage);
                 items.Add(huiswerk);
 
                 var cijfers = new ModelItem();
                 cijfers.Title = "Cijfers";
                 cijfers.symb = Symbol.FontSize;
+                cijfers.frame = typeof(MainPage);
                 items.Add(cijfers);
 
 
                 var vakken = new ModelItem();
                 vakken.Title = "Vakken";
                 vakken.symb = Symbol.Library;
+                vakken.frame = typeof(MainPage);
                 items.Add(vakken);
 
                 var afwezigheid = new ModelItem();
                 afwezigheid.Title = "Afwezigheid";
                 afwezigheid.symb = Symbol.ContactPresence;
+                vakken.frame = typeof(MainPage);
                 items.Add(afwezigheid);
 
                 MainHubView.ItemsSource = items;
