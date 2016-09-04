@@ -43,11 +43,13 @@ namespace BetterSom.Views
         string username;
         string password;
         string afkorting;
+        string id;
         public string JIDD = "";
         private void HomeSom_Loaded(object sender, RoutedEventArgs e)
         {
             var localData = ApplicationData.Current.LocalSettings;
             afkorting = localData.Values["afkorting"].ToString();
+            id = localData.Values["iD"].ToString();
             username = localData.Values["echteNaam"].ToString();
             password = localData.Values["echteWachtwoord"].ToString();
             webView.Source = new Uri("https://"+afkorting+"-elo.somtoday.nl/");
@@ -74,9 +76,6 @@ namespace BetterSom.Views
             {
                 if (webView.Source.ToString().Contains("pasfoto"))
                 {
-
-  
-
                     RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
                     await renderTargetBitmap.RenderAsync(webView);
                     var file = await KnownFolders.PicturesLibrary.CreateFileAsync("profilepicture.png", CreationCollisionOption.ReplaceExisting);
@@ -112,7 +111,7 @@ namespace BetterSom.Views
                     await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByName('usernameFieldPanel:usernameFieldPanel_body:usernameField')[0].value='" + username + "';" });
                     await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByName('passwordFieldPanel:passwordFieldPanel_body:passwordField')[0].value='" + password + "';" });
                     await webView.InvokeScriptAsync("eval", new string[] { "document.getElementsByTagName('a')[0].click();" });
-                    webView.Navigate(new Uri("https://merewa-elo.somtoday.nl/pasfoto/pasfoto_leerling.jpg?id=546308480"));
+                    webView.Navigate(new Uri("https://merewa-elo.somtoday.nl/pasfoto/pasfoto_leerling.jpg?id="+id));
                 }
 
             }
