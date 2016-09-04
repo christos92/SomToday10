@@ -134,9 +134,14 @@ namespace BetterSom
                     foreach (var na in school.leerlingen)
                     {
                         localData.Values["naam"] = na.fullName;
+
+                        localData.Values["echteNaam"] = user.Text;
+                        localData.Values["echteWachtwoord"] = ww.Password;
+
                         localData.Values["lNaam"] = username;
                         localData.Values["iD"] = na.leerlingId;
                         localData.Values["pass"] = password;
+                       localData.Values["afkorting"] = cobSec.afkorting;
                         localData.Values["brin"] = brin;
                         localData.Values["sc"] = schoolName;
                         if (remember.IsChecked == true)
@@ -148,9 +153,7 @@ namespace BetterSom
                         {
                             localData.Values["autoLogin"] = "false";
                         }
-                        BetterSom.Utils.CookieHelper cl = new BetterSom.Utils.CookieHelper();
-                       var test = await cl.getLogCookies(user.Text, ww.Password);
-                        Debug.Write(test);
+            
                     }
                     this.Frame.Navigate(typeof(homeSom));
                 }
@@ -188,13 +191,14 @@ namespace BetterSom
 
                         localData.Values["naam"] = na.fullName;
                         localData.Values["iD"] = na.leerlingId;
-
+                
                         this.Frame.Navigate(typeof(homeSom));
                     }
                 }
                 else
                 {
-
+                    MessageDialog failedMessage = new MessageDialog("Helaas kon de app niet inloggen, controleer uw wachtwoord en/of gebruikersnaam.", "Helaas");
+                    await failedMessage.ShowAsync();
                 }
             }
             catch (Exception e1)

@@ -18,22 +18,25 @@
                 <ColumnDefinition Width="293*"/>
                 <ColumnDefinition Width="67*"/>
             </Grid.ColumnDefinitions>
+        
             <StackPanel Background="{ThemeResource SystemControlBackgroundAccentBrush}" Orientation="Horizontal" >
-                <Ellipse  Width="75" Height="79" VerticalAlignment="Center">
+                <Ellipse x:ConnectionId='2' x:Name="Els"  Width="75" Height="79" VerticalAlignment="Center">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="ms-appx:///Assets/pasfoto_leerling.jpg" Stretch="UniformToFill"/>
+                        <ImageBrush x:ConnectionId='5' x:Name="imageBrush"  Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Square150x150Logo.png"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Foreground="{ThemeResource SystemControlForegroundAltHighBrush}" Margin="10,0" Grid.Row="1" VerticalAlignment="Center" >
-            <Run x:ConnectionId='1' x:Name="tijd" FontSize="23" Text="Goedenmiddag, "/>
+            <Run x:ConnectionId='3' x:Name="tijd" FontSize="23" Text="Goedenmiddag, "/>
                 <LineBreak/>
-            <Run x:ConnectionId='2' x:Name="Naam" FontSize="17" Text="Christos Karapasias" Foreground="#FFCDCACA"/>
+            <Run x:ConnectionId='4' x:Name="Naam" FontSize="17" Text="Christos Karapasias" Foreground="#FFCDCACA"/>
                 </TextBlock>
             </StackPanel>
             <Grid  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Grid.Column="1">
                 <AppBarButton Icon="Setting" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{ThemeResource SystemControlForegroundAltHighBrush}"/>
-            </Grid>
-        </Grid>
+            </Grid> 
+          
+        </Grid> 
+        <WebView x:ConnectionId='1' Grid.Row="1" x:Name="webView" />
     </Grid>
 </Page>
 

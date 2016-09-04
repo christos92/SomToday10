@@ -95,7 +95,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utils\CookieHelper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -119,7 +118,6 @@
   <ItemGroup>
     <Content Include="Assets\Backgrounds\somtoday.jpg" />
     <Content Include="Assets\Logos\unnamed.png" />
-    <Content Include="Assets\pasfoto_leerling.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>029203F3488FA32320D8CB214DA0A08ABFEC0B33844F364CFBFA4FC7E04BBE70</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>12BD3AE2FE1534BAFA364544454A85D6B9AA3891BBA580F8B02705B05CBDD878</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>c88f348d-a4cf-4966-bfc0-406d5630106e_1.0.0.0_x86__bp77b5s80e5yt</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>c88f348d-a4cf-4966-bfc0-406d5630106e_bp77b5s80e5yt!App</RegisteredUserModeAppID>
     <RegisteredPackageID>c88f348d-a4cf-4966-bfc0-406d5630106e</RegisteredPackageID>
@@ -28,13 +28,17 @@
     <AppXManifest Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-03T21:41:39.731</Modified>
+      <Modified>2016-09-04T14:00:06.204</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\BetterSom.exe">
       <PackagePath>entrypoint\BetterSom.exe</PackagePath>
-      <Modified>2016-09-03T21:41:38.904</Modified>
+      <Modified>2016-09-04T14:00:05.187</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
+      <PackagePath>HtmlAgilityPack.dll</PackagePath>
+      <Modified>2016-07-14T09:01:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -536,10 +540,6 @@
       <PackagePath>Assets\Backgrounds\somtoday.jpg</PackagePath>
       <Modified>2016-09-03T10:46:16.361</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\Assets\pasfoto_leerling.jpg">
-      <PackagePath>Assets\pasfoto_leerling.jpg</PackagePath>
-      <Modified>2016-09-03T12:30:02.247</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\Assets\Logos\unnamed.png">
       <PackagePath>Assets\Logos\unnamed.png</PackagePath>
       <Modified>2016-09-03T10:50:14.969</Modified>
@@ -584,7 +584,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\BetterSom.xr.xml">
       <PackagePath>BetterSom.xr.xml</PackagePath>
-      <Modified>2016-09-03T15:24:41.131</Modified>
+      <Modified>2016-09-03T23:30:29.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -628,11 +628,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-03T20:26:35.441</Modified>
+      <Modified>2016-09-04T13:08:52.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Core\BetterSom.exe">
       <PackagePath>BetterSom.exe</PackagePath>
-      <Modified>2016-09-03T21:41:39.727</Modified>
+      <Modified>2016-09-04T14:00:06.200</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

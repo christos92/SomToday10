@@ -232,3 +232,6 @@ C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\
 C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Template10Library.pri.xml
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\HtmlAgilityPack.dll
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\HtmlAgilityPack.pdb
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\HtmlAgilityPack.pri.xml

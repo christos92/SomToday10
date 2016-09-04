@@ -25,6 +25,9 @@
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\BetterSom.exe">
       <PackagePath>entrypoint\BetterSom.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
+      <PackagePath>HtmlAgilityPack.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -399,9 +402,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\Assets\Backgrounds\somtoday.jpg">
       <PackagePath>Assets\Backgrounds\somtoday.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\Assets\pasfoto_leerling.jpg">
-      <PackagePath>Assets\pasfoto_leerling.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\Assets\Logos\unnamed.png">
       <PackagePath>Assets\Logos\unnamed.png</PackagePath>

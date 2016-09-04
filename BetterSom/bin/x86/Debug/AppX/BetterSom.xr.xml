@@ -115,6 +115,7 @@
     </RootType>
     <RootType FullName="BetterSom.MainPage" />
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.WebView" />
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Icon" />
       <RootProperty Name="HorizontalAlignment" />
