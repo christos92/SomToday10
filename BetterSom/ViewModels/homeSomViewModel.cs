@@ -48,6 +48,15 @@ namespace BetterSom.ViewModels
             {
                 profiel.Tijd = "Goedenavond,";
             }
+
+            TimeSpan start3 = new TimeSpan(0, 0, 0); //12 o'clock
+            TimeSpan end3 = new TimeSpan(6, 0, 0); //24 o'clock
+            TimeSpan now3 = DateTime.Now.TimeOfDay;
+
+            if ((now3 > start3) && (now3 < end3))
+            {
+                profiel.Tijd = "Slaaplekker,";
+            }
             profiel.huisWerk = hw;
             profiel.Cijfers = col;
             LeerlingProf = profiel;
