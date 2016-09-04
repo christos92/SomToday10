@@ -59,6 +59,7 @@ namespace BetterSom.Views
             password = localData.Values["echteWachtwoord"].ToString();
             webView.Source = new Uri("https://"+afkorting+"-elo.somtoday.nl/");
             webView.NavigationCompleted += WebView_NavigationCompleted;
+            frame.Navigate(typeof(MainHub));
         }
         public static string getBetween(string strSource, string strStart, string strEnd)
         {
@@ -75,9 +76,6 @@ namespace BetterSom.Views
             }
         }
       
-
-
-
         private async void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
         {
             try

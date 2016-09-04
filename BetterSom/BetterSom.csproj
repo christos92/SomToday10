@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Models\Cijfer.cs" />
     <Compile Include="Models\Huiswerk.cs" />
+    <Compile Include="Models\ModelItem.cs" />
     <Compile Include="Models\loggedIn.cs" />
     <Compile Include="Models\scholen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +109,9 @@
     <Compile Include="ViewModels\ViewModelHelper.cs" />
     <Compile Include="Views\homeSom.xaml.cs">
       <DependentUpon>homeSom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainHub.xaml.cs">
+      <DependentUpon>MainHub.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +142,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\homeSom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainHub.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

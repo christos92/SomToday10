@@ -6,15 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using Windows.UI.Xaml.Controls;
 
 namespace BetterSom.ViewModels
 {
     public class homeSomViewModel
     {   private ObservableCollection<Cijfer> col = new ObservableCollection<Cijfer>();
         private ObservableCollection<Huiswerk> hw = new ObservableCollection<Huiswerk>();
-       
+ 
         public homeSomViewModel()
         {
+       
+            #region initprof
             var localData = ApplicationData.Current.LocalSettings;
             Profiel profiel = new Profiel();
             profiel.Naam = localData.Values["naam"].ToString();
@@ -49,8 +52,8 @@ namespace BetterSom.ViewModels
                 profiel.Tijd = "Goedenavond,";
             }
 
-            TimeSpan start3 = new TimeSpan(0, 0, 0); //12 o'clock
-            TimeSpan end3 = new TimeSpan(6, 0, 0); //24 o'clock
+            TimeSpan start3 = new TimeSpan(0, 0, 0); //0 o'clock
+            TimeSpan end3 = new TimeSpan(6, 0, 0); //6 o'clock
             TimeSpan now3 = DateTime.Now.TimeOfDay;
 
             if ((now3 > start3) && (now3 < end3))
@@ -60,6 +63,7 @@ namespace BetterSom.ViewModels
             profiel.huisWerk = hw;
             profiel.Cijfers = col;
             LeerlingProf = profiel;
+            #endregion         
         }
         private Profiel leerlingProfiel;
         public Profiel LeerlingProf

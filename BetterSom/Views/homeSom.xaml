@@ -12,6 +12,12 @@
         <viewModels:homeSomViewModel/>
     </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Transitions>
+            <TransitionCollection>
+                <RepositionThemeTransition/>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.Transitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="557*"/>
@@ -21,7 +27,7 @@
                 <ColumnDefinition Width="293*"/>
                 <ColumnDefinition Width="67*"/>
             </Grid.ColumnDefinitions>
-        
+
             <StackPanel  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Orientation="Horizontal" >
                 <Ellipse x:Name="Els"  Width="75" Height="79" VerticalAlignment="Center">
                     <Ellipse.Fill>
@@ -36,13 +42,11 @@
             </StackPanel>
             <Grid  Background="{ThemeResource SystemControlBackgroundAccentBrush}" Grid.Column="1">
                 <AppBarButton Icon="Setting" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{ThemeResource SystemControlForegroundAltHighBrush}"/>
-            </Grid> 
-          
+            </Grid>
+
         </Grid>
-     
-        <Image x:Name="RenderedImage" Grid.Row="1"/>
         <WebView  x:Name="webView" Height="160" Width="110" Margin="3012,-460,-3012,264" />
-      
+        <Frame Grid.Row="1" x:Name="frame"/>
     </Grid>  
  
 </Page>

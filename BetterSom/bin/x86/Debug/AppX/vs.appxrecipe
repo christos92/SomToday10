@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-04T17:22:54.590</Modified>
+      <Modified>2016-09-04T18:28:31.187</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\BetterSom.exe">
       <PackagePath>entrypoint\BetterSom.exe</PackagePath>
-      <Modified>2016-09-04T17:22:53.452</Modified>
+      <Modified>2016-09-04T18:28:29.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
@@ -584,7 +584,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\BetterSom.xr.xml">
       <PackagePath>BetterSom.xr.xml</PackagePath>
-      <Modified>2016-09-04T17:15:38.186</Modified>
+      <Modified>2016-09-04T18:28:29.427</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -628,11 +628,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-04T17:15:39.184</Modified>
+      <Modified>2016-09-04T18:28:30.481</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Core\BetterSom.exe">
       <PackagePath>BetterSom.exe</PackagePath>
-      <Modified>2016-09-04T17:22:54.586</Modified>
+      <Modified>2016-09-04T18:28:31.183</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

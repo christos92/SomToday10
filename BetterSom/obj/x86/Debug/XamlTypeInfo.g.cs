@@ -156,7 +156,7 @@ namespace BetterSom.BetterSom_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[7];
+            _typeNameTable = new string[8];
             _typeNameTable[0] = "BetterSom.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -164,8 +164,9 @@ namespace BetterSom.BetterSom_XamlTypeInfo
             _typeNameTable[4] = "Object";
             _typeNameTable[5] = "BetterSom.Models.Profiel";
             _typeNameTable[6] = "BetterSom.Views.homeSom";
+            _typeNameTable[7] = "BetterSom.Views.MainHub";
 
-            _typeTable = new global::System.Type[7];
+            _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::BetterSom.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -173,6 +174,7 @@ namespace BetterSom.BetterSom_XamlTypeInfo
             _typeTable[4] = typeof(global::System.Object);
             _typeTable[5] = typeof(global::BetterSom.Models.Profiel);
             _typeTable[6] = typeof(global::BetterSom.Views.homeSom);
+            _typeTable[7] = typeof(global::BetterSom.Views.MainHub);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -211,6 +213,7 @@ namespace BetterSom.BetterSom_XamlTypeInfo
         private object Activate_3_homeSomViewModel() { return new global::BetterSom.ViewModels.homeSomViewModel(); }
         private object Activate_5_Profiel() { return new global::BetterSom.Models.Profiel(); }
         private object Activate_6_homeSom() { return new global::BetterSom.Views.homeSom(); }
+        private object Activate_7_MainHub() { return new global::BetterSom.Views.MainHub(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -259,6 +262,13 @@ namespace BetterSom.BetterSom_XamlTypeInfo
             case 6:   //  BetterSom.Views.homeSom
                 userType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_6_homeSom;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  BetterSom.Views.MainHub
+                userType = new global::BetterSom.BetterSom_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_MainHub;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -234,4 +234,8 @@ C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\
 C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Template10Library.pri.xml
 C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\BetterSom.csprojResolveAssemblyReference.cache
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\bin\x86\Debug\Views\MainHub.xbf
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Views\MainHub.g.i.cs
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Views\MainHub.g.cs
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Views\MainHub.xaml
+C:\Users\Christos\Documents\Visual Studio 2015\Projects\BetterSom\BetterSom\obj\x86\Debug\Views\MainHub.xbf
